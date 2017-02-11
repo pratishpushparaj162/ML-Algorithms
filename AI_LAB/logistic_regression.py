@@ -1,11 +1,12 @@
 from __future__ import division
 
-m_train = 220
-m = 270
-n = 13
-y_ = []
-x_ = [[None for i in range(n)] for j in range(m)]
-theta = []
+m_train = 220   #training data
+m_test  = 50 	#testing data
+m = 270         #total no. training examples in file
+n = 13		#total no.of features in file
+y_ = []		#output array
+x_ = [[None for i in range(n)] for j in range(m)]       #feature set
+theta = []	
 hyp_func = []
 for k in range(m_train):
 	hyp_func.append(None)
@@ -23,8 +24,8 @@ for l in training_file:
 			x_[i][j] = float(temp_list[j])
 		i += 1
 
-avg =[]
-rang = []
+avg =[]		#average of every column in x matrix
+rang = []	#range of every column in x matrix
 def mean_norm(x_):
 	for i in range(n):
 		sum = 0
@@ -51,7 +52,7 @@ def der(derivative,l):
 		derivative += (hyp_func[i]-y[i])*l[i]
 	return derivative
 
-mean_norm(x_)
+mean_norm(x_)	#Apply if you want to.
 y = y_[:m_train]
 x = x_[:m_train]
 
@@ -64,7 +65,7 @@ for j in range(n+1):
 	theta.append(j+1)
 
 x0 = [1]*m_train
-for k in range(10000):   # No. of iterations
+for k in range(10000):       # No. of iterations
 	for j in range(m_train):
 		xr = x[j]
 		X = 0
@@ -74,9 +75,9 @@ for k in range(10000):   # No. of iterations
 		hyp_func[j] = hyp_funct(X)
 	temp = []
 
-	temp.append(theta[0]-0.01*der(0,x0))
+	temp.append(theta[0]-0.01*der(0,x0))    #for theta[0]
 
-	for i in range(n):
+	for i in range(n): 			#for theta[1] to theta[n]
 		temp.append(theta[i+1]-0.01*der(0,xc[i]))
 	for i in range(n+1):
 		theta[i] = temp[i]
