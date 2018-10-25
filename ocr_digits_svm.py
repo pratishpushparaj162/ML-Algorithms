@@ -62,7 +62,7 @@ kernel=np.ones((2,2),np.uint8)
 gray=cv2.dilate(gray,kernel,iterations=1)
 gray = cv2.erode(gray,kernel,iterations=1)
 cv2.imshow('kk',gray)
-cv2.waitKey(0)
+cv2.waitKey(20)
 test_cells=[np.hsplit(row,1) for row in np.vsplit(gray,1)]
 deskewed = [map(deskew,row) for row in test_cells]
 print deskewed
