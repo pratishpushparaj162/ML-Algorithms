@@ -74,7 +74,3 @@ print result
 
 
 
-# #######   Check Accuracy   ########################
-# mask = result==responses
-# correct = np.count_nonzero(mask)
-# print correct*100.0/result.size
