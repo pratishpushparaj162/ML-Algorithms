@@ -90,23 +90,5 @@ while 1:
 		cost_function = cost_function_
 		continue
 print theta
-#predict
-# x_new = x_[m_train:m_train+m_test]
-# y_train = y_[m_train:m_test+m_train]
-# y_test = []
-# # for i in range(n):
-# 	# x_new.append(float(raw_input()))
-# # for j in range(n):
-# 	# x_new[j] = (x_new[j]-avg[j])/rang[j]
-# for j in range(m_test):
-# 	X = 0
-# 	for i in range(n):
-# 		X += theta[i+1]*x_new[j][i]
-# 	X += theta[0]
-# 	y_test.append(X)
-# print y_train,y_test
-# k=0
-# for j in range(m_test):
-# 	if y_test[j] == y_train[j]:
-# 		k +=1
-# print k/m_test
+
+
